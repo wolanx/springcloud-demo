@@ -2,12 +2,14 @@ package com.zx5435;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-public class NewsApp {
+@EnableEurekaClient
+public class NewsServiceApp {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(NewsApp.class)
+        new SpringApplicationBuilder(NewsServiceApp.class)
                 .run(args);
     }
 

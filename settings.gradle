@@ -1,2 +1,7 @@
 rootProject.name = 'pcmoto'
+
+include 'base-eureka'
 include 'service-news'
+include 'service-user'
+include 'view-web'
+
