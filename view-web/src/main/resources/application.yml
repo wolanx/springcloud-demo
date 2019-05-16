@@ -1,5 +1,16 @@
 server:
   port: 2001
 spring:
+  application:
+    name: view-web
   thymeleaf:
     cache: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761
+
+feign:
+  hystrix:
+    enabled: true

@@ -1,10 +1,13 @@
 package com.zx5435.route;
 
+import com.zx5435.model.NewsModel;
 import com.zx5435.rpc.NewsRpc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
 
 @Controller
 public class Site {
@@ -14,11 +17,10 @@ public class Site {
 
     @RequestMapping("/")
     public String index(Model m) {
-        m.addAttribute("newsList", 123);
+        ArrayList<NewsModel> list = newsRpc.getList();
+        System.out.println("list = " + list);
 
-        Object info = newsRpc.info();
-        System.out.println("info = " + info);
-
+        m.addAttribute("newsList", list);
         return "site/index";
     }
 

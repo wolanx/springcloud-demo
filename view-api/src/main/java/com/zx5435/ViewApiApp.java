@@ -2,16 +2,14 @@ package com.zx5435;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableEurekaClient
-@EnableFeignClients
-public class UserViewApp {
+@EnableDiscoveryClient
+public class ViewApiApp {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(UserViewApp.class)
+        new SpringApplicationBuilder(ViewApiApp.class)
                 .run(args);
     }
 

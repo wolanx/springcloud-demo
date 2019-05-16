@@ -8,5 +8,8 @@
 <nav>
     <a href="/user">user</a>
 </nav>
+<ul>
+    <li th:each="o : ${newsList}" th:text="${o.title}"></li>
+</ul>
 </body>
 </html>

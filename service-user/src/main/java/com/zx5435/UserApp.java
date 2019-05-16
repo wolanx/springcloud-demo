@@ -1,4 +1,4 @@
-package zx5435;
+package com.zx5435;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

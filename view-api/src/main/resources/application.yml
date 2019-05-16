@@ -1,8 +1,8 @@
 server:
-  port: 1002
+  port: 2002
 spring:
   application:
-    name: service-news
+    name: view-api
 
 eureka:
   client:

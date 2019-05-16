@@ -1,4 +1,4 @@
-package zx5435.route;
+package com.zx5435.route;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

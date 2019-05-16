@@ -27,7 +27,7 @@ subprojects {
     }
 
     dependencies {
-        //compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.3.RELEASE', ext: 'pom'
+        //compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.4.RELEASE', ext: 'pom'
         compile "cn.hutool:hutool-all:4.3.1"
         testCompile 'junit:junit:4.11'
     }
