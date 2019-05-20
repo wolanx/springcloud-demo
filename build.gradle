@@ -1,10 +1,22 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
 plugins {
-    id 'org.springframework.boot' version '2.1.4.RELEASE' // 重点
     id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE' // 重点
 }
 
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'docker'
     apply plugin: 'io.spring.dependency-management'
     apply plugin: 'org.springframework.boot'
 
@@ -30,5 +42,28 @@ subprojects {
         //compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '2.1.4.RELEASE', ext: 'pom'
         compile "cn.hutool:hutool-all:4.3.1"
         testCompile 'junit:junit:4.11'
+    }
+
+    // @see https://github.com/Transmode/gradle-docker
+    task buildDocker(type: Docker, dependsOn: bootJar) {
+        doFirst {
+            copy {
+                from jar
+                into stageDir
+            }
+        }
+        applicationName = jar.baseName
+        baseImage = 'openjdk:8-alpine'
+        workingDir '/app'
+        addFile("${jar.baseName}-${jar.version}.jar", "app.jar")
+        entryPoint(["java", "-jar", 'app.jar'])
+        // exposePort(8081)
+        runCommand "ls -la"
+    }
+
+    task runDocker(dependsOn: buildDocker) {
+        doLast {
+            println 'hehe ' + jar.baseName
+        }
     }
 }
