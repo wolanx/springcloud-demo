@@ -1,0 +1,24 @@
+version: "3"
+services:
+  eureka:
+    image: com.zx5435/base-eureka:1.0
+    ports:
+      - "8761:8761"
+  news:
+    image: com.zx5435/service-news:1.0
+    ports:
+      - "1002:1002"
+    extra_hosts:
+      - "eureka-server:172.16.30.205"
+    depends_on:
+      - eureka
+  web:
+    image: com.zx5435/view-web:1.0
+    ports:
+      - "2001:2001"
+    extra_hosts:
+      - "eureka-server:172.16.30.205"
+    depends_on:
+      - eureka
+networks:
+  mynet:
