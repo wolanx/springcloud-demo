@@ -1,0 +1,10 @@
+{
+  "name": "base-eureka",
+  "script": "java",
+  "args": [
+    "-jar",
+    "base-eureka/build/libs/base-eureka-1.0.jar"
+  ],
+  "exec_interpreter": "",
+  "exec_mode": "fork"
+}

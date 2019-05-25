@@ -13,4 +13,6 @@ java -jar base-eureka/build/libs/base-eureka-1.0.jar
 gradle base-eureka:runDocker --info
 
 docker run -it -d -p 8761:8761 --name=base-eureka com.zx5435/base-eureka:1.0
+
+pm2 start pm2.json
 ```
