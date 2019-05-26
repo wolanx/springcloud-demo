@@ -32,6 +32,11 @@ allprojects {
 }
 
 subprojects {
+    ext {
+        mySqlVer = "8.0.13"
+        mybatisVer = "1.1.1"
+    }
+
     dependencyManagement {
         imports {
             mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE' // 重点

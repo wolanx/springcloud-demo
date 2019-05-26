@@ -3,6 +3,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
 
     // db
-    compile 'mysql:mysql-connector-java:8.0.13'
-    compile 'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1'
+    compile "mysql:mysql-connector-java:${mySqlVer}"
+    compile "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVer}"
 }

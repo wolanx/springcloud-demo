@@ -16,3 +16,9 @@ docker run -it -d -p 8761:8761 --name=base-eureka com.zx5435/base-eureka:1.0
 
 pm2 start pm2.json
 ```
+
+## bao
+ - fastjson
+ - md5 commons-codec
+ - guava 工具包
+ - ArrayUtils CollectionUtils org.apache.commons.lang3

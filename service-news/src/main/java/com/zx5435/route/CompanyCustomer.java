@@ -1,10 +1,11 @@
 package com.zx5435.route;
 
-import com.zx5435.model.base.CompanyCustomerDO;
+import com.zx5435.model.entity.CompanyCustomerDO;
 import com.zx5435.model.dao.CompanyCustomerDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,11 +20,14 @@ public class CompanyCustomer {
     CompanyCustomerDAO companyCustomerDAO;
 
     @GetMapping(value = "/cc")
-    public Object list() {
+    public Object list(@RequestParam(value = "page", defaultValue = "1") int page,
+                       @RequestParam(value = "per-page", defaultValue = "20") int pageSize) {
         String s = environment.getProperty("spring.datasource.password");
         System.out.println("s = " + s);
 
-        List<CompanyCustomerDO> list = companyCustomerDAO.list();
+        int offset = (page - 1) * pageSize;
+
+        List<CompanyCustomerDO> list = companyCustomerDAO.findAllRange(offset, pageSize);
         System.out.println("list = " + list);
 
         return list;
