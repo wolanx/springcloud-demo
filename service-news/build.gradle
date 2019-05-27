@@ -5,4 +5,7 @@ dependencies {
     // db
     compile "mysql:mysql-connector-java:${mySqlVer}"
     compile "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVer}"
+
+    //test
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
