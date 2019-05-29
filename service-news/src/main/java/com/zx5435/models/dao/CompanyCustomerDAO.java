@@ -1,6 +1,6 @@
-package com.zx5435.model.dao;
+package com.zx5435.models.dao;
 
-import com.zx5435.model.entity.CompanyCustomerDO;
+import com.zx5435.models.entity.CompanyCustomerDO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

@@ -5,7 +5,7 @@ spring:
     name: service-news
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${sc_db_host}:3306/at-dev?characterEncoding=UTF-8
+    url: jdbc:mysql://${sc_db_host}:3306/mt-dev?characterEncoding=UTF-8
     username: ${sc_db_user}
     password: ${sc_db_pwd}
 

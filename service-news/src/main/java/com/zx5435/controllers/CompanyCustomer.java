@@ -1,7 +1,7 @@
-package com.zx5435.route;
+package com.zx5435.controllers;
 
-import com.zx5435.model.entity.CompanyCustomerDO;
-import com.zx5435.model.dao.CompanyCustomerDAO;
+import com.zx5435.models.dao.CompanyCustomerDAO;
+import com.zx5435.models.entity.CompanyCustomerDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,7 @@
-package com.zx5435.route;
+package com.zx5435.controllers;
 
-import com.zx5435.model.dao.CompanyCustomerDAO;
-import com.zx5435.model.entity.CompanyCustomerDO;
+import com.zx5435.models.dao.CompanyCustomerDAO;
+import com.zx5435.models.entity.CompanyCustomerDO;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

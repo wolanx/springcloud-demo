@@ -1,11 +1,11 @@
-package com.zx5435.route;
+package com.zx5435.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class User {
+public class UserController {
 
     @RequestMapping("/user")
     public String index(Model m) {

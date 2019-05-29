@@ -1,4 +1,4 @@
-package com.zx5435.model.entity;
+package com.zx5435.models.entity;
 
 public class CompanyCustomerDO {
 

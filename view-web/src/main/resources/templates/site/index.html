@@ -9,7 +9,7 @@
     <a href="/user">user</a>
 </nav>
 <ul>
-    <li th:each="o : ${newsList}" th:text="${o.title}"></li>
+    <li th:each="o : ${newsList}"><a th:href="|/news/${o.id}|" th:text="${o.title}"></a></li>
 </ul>
 </body>
 </html>
