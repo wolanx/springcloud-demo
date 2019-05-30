@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
-@FeignClient(value = "SERVICE-NEWS", fallback = NewsRpcErr.class)
+@FeignClient(value = "SERVICE-NEWS",
+        /*fallback = NewsRpcErr.class,*/
+        fallbackFactory = NewsRpcErr2.class,
+        configuration = FeignClientsConfig.class)
 @Repository
 public interface NewsRpc {
 

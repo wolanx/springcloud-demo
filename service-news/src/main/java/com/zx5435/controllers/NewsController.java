@@ -1,7 +1,7 @@
 package com.zx5435.controllers;
 
-import com.zx5435.models.vo.NewsOneVO;
 import com.zx5435.models.entity.NewsDO;
+import com.zx5435.models.vo.NewsOneVO;
 import com.zx5435.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +20,7 @@ public class NewsController {
     @GetMapping("/news/info")
     @ResponseBody
     public NewsOneVO info(@RequestParam int id) {
+        //
         return newsService.getOne(id);
     }
 
