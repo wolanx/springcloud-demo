@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="cn" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>sdasd</title>
+    <title th:text="${info.title}"></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="/favicon.ico?123" type="image/x-icon">
+    <link rel="stylesheet" href="/css/reset.m.css">
+    <link rel="stylesheet" href="/css/news_info.css">
+    <script>
+        (function setFS() {
+            var oHtml = document.documentElement;
+            var screenWidth = oHtml.clientWidth < 640 ? oHtml.clientWidth : 640;
+            oHtml.style.fontSize = screenWidth / (750 / 100) + 'px';
+        })();
+    </script>
 </head>
-<body>
-<div>
-    <h1 th:utext="${info.title}">title</h1>
-    <section th:utext="${info.content}"></section>
-</div>
+<body class="max640">
+<main class="bit-wrap">
+    <div class="bit-title" th:utext="${info.title}">title</div>
+    <div class="bit-source">
+        <span th:text="${info.publish_at}">发布时间</span>
+        <span th:text="${info.source_name != null ? info.source_name : '摩极网'}">来源</span>
+    </div>
+    <section class="bit-text" th:utext="${info.content}"></section>
+</main>
 </body>
 </html>

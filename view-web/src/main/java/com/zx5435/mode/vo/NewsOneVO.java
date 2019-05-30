@@ -8,6 +8,7 @@ public class NewsOneVO {
     private String thumb;
     private String source_name;
     private Integer views;
+    private String publish_at;
     //
     private String content;
 
@@ -19,9 +20,18 @@ public class NewsOneVO {
                 ", description='" + description + '\'' +
                 ", thumb='" + thumb + '\'' +
                 ", source_name='" + source_name + '\'' +
-                ", views='" + views + '\'' +
+                ", views=" + views +
+                ", publish_at='" + publish_at + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    public String getPublish_at() {
+        return publish_at;
+    }
+
+    public void setPublish_at(String publish_at) {
+        this.publish_at = publish_at;
     }
 
     public Integer getId() {

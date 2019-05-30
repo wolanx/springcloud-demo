@@ -1,0 +1,42 @@
+body {
+    background-color: #F7F7F7;
+}
+
+.bit-wrap {
+    margin: .25rem;
+    padding: .25rem;
+    font-size: 0.26rem;
+    color: #1a2634;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #ffffff;
+    border-radius: .25rem;
+}
+
+.bit-title {
+    text-align: left;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.bit-source {
+    margin: .2rem 0 .1rem;
+    text-align: left;
+    color: #95a1b3;
+    font-size: 0.26rem;
+}
+
+.bit-text {
+    margin: .2rem 0;
+    text-align: left;
+    color: #1a2634;
+    font-size: 0.31rem;
+    line-height: 0.6rem;
+    letter-spacing: .5px;
+}
+
+.bit-text * {
+    max-width: 100%;
+}

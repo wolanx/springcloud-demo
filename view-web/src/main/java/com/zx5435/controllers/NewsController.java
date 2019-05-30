@@ -18,6 +18,9 @@ public class NewsController {
     public String info(Model m,
                        @PathVariable("id") int id) {
         NewsOneVO info = newsRpc.info(id);
+
+        info.setContent(info.getContent().replace("<!cmsurl />", "//localhost/"));
+
         m.addAttribute("info", info);
 
         return "news/info";
