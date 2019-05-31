@@ -16,7 +16,8 @@ public class FeignClientsConfig implements ErrorDecoder {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+//        return null;
+        return new RuntimeException("not404");
     }
 
 }

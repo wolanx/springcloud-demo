@@ -16,7 +16,10 @@ public class NewsController {
 
     @RequestMapping(value = "/news/{id}")
     public String info(Model m,
-                       @PathVariable("id") int id) {
+                       @PathVariable("id") int id) throws Exception {
+//        if (true) {
+//            throw new Exception("This is MyException1.");
+//        }
         NewsOneVO info = newsRpc.info(id);
 
         info.setContent(info.getContent().replace("<!cmsurl />", "//localhost/"));

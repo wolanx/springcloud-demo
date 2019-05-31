@@ -30,9 +30,11 @@ public class MyError {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public LinkedHashMap<String, Object> e404(NotFoundHttpException e) {
         LinkedHashMap<String, Object> m = new LinkedHashMap<>();
-        m.put("status", HttpStatus.NOT_FOUND.value());
-        m.put("code", e.getCode());
+        m.put("name", HttpStatus.NOT_FOUND);
         m.put("message", e.getMessage());
+        m.put("code", e.getCode());
+        m.put("status", HttpStatus.NOT_FOUND.value());
+        m.put("previous", e.getCause());
 
         return m;
     }
@@ -42,9 +44,11 @@ public class MyError {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public LinkedHashMap<String, Object> e500(BadRequestHttpException e) {
         LinkedHashMap<String, Object> m = new LinkedHashMap<>();
-        m.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
-        m.put("code", e.getCode());
+        m.put("name", HttpStatus.INTERNAL_SERVER_ERROR);
         m.put("message", e.getMessage());
+        m.put("code", e.getCode());
+        m.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+        m.put("previous", e.getCause());
 
         return m;
     }
