@@ -1,4 +1,4 @@
-package com.zx5435.rpc;
+package com.zx5435.config;
 
 import org.springframework.boot.web.server.ErrorPage;
 import org.springframework.boot.web.server.ErrorPageRegistrar;

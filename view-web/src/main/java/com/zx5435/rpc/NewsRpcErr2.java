@@ -9,7 +9,7 @@ public class NewsRpcErr2 implements FallbackFactory<NewsRpc> {
     @Override
     public NewsRpc create(Throwable throwable) {
 //        throwable.printStackTrace();
-        System.out.println("throwable = " + throwable.getMessage());
+        System.out.println("NewsRpcErr2 = " + throwable.getMessage());
         return null;
     }
 

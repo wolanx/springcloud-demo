@@ -6,4 +6,5 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
 }
