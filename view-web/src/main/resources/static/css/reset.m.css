@@ -82,7 +82,7 @@ img {
     vertical-align: middle;
 }
 
-.max640 {
+.w600 {
     margin: 0 auto;
     max-width: 640px;
 }

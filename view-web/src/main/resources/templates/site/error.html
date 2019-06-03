@@ -2,8 +2,72 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>error/index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="/css/reset.m.css">
+    <script>
+        (function setFS() {
+            var oHtml = document.documentElement;
+            var screenWidth = oHtml.clientWidth < 640 ? oHtml.clientWidth : 640;
+            oHtml.style.fontSize = screenWidth / (750 / 100) + 'px';
+        })();
+    </script>
 </head>
 <body>
-<p th:text="${message}"></p>
+<main class="w600">
+    <div class="message-box clearfix">
+        <div class="icon error"></div>
+        <p class="text" th:text="${message}">页面找不到了</p>
+        <a class="back" href="/">返回</a>
+    </div>
+</main>
+<style>
+    body {
+        background-color: #F7F7F7;
+    }
+
+    .message-box {
+        background: #fff;
+        margin: 1.4rem .25rem .25rem;
+        border-radius: .25rem;
+        overflow: hidden;
+    }
+
+    .message-box .icon {
+        margin: 1.3rem auto 0 auto;
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+    }
+
+    .message-box .icon.success {
+        background: #17a979 url("/img/gou@3x.png") 50% 50% no-repeat;
+        background-size: .7rem;
+    }
+
+    .message-box .icon.error {
+        background: #c3d0e2 url("/img/cha@3x.png") 50% 50% no-repeat;
+        background-size: .6rem;
+    }
+
+    .message-box .text {
+        width: 70%;
+        margin: .5rem auto 1rem auto;
+        font-size: .3rem;
+        text-align: center;
+        color: #c3d0e2;
+    }
+
+    .message-box .back {
+        display: block;
+        width: 2rem;
+        margin: 0 auto 1.1rem auto;
+        color: #fff;
+        background-color: #c3d0e2;
+        font-size: .3rem;
+        line-height: .8rem;
+        text-align: center;
+        border-radius: .4rem;
+    }
+</style>
 </body>
 </html>
