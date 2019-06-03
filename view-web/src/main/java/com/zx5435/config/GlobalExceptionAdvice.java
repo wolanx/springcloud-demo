@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 @ControllerAdvice
 public class GlobalExceptionAdvice {
 
-    @ExceptionHandler(Exception.class) // 所有的异常都是Exception子类
-    public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) { // 出现异常之后会跳转到此方法
-        ModelAndView mav = new ModelAndView("error"); // 设置跳转路径
-        mav.addObject("url", request.getRequestURL());
-        mav.addObject("exception", e.getCause());
-        //e.printStackTrace();
-        System.out.println("GlobalExceptionAdvice: " + e.getCause().getMessage());
+    @ExceptionHandler(Exception.class)
+    public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
+        ModelAndView mav = new ModelAndView("site/error");
+        mav.addObject("message", e.getMessage());
+        System.out.println("GlobalExceptionAdvice: " + e.getMessage());
+
+
         return mav;
     }
 

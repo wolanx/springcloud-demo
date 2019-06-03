@@ -23,4 +23,11 @@ public class SiteController {
         return "site/index";
     }
 
+    @RequestMapping("/site/error")
+    public String siteError(Model m) {
+        m.addAttribute("message", 123);
+
+        return "site/error";
+    }
+
 }
