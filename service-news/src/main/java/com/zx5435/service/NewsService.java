@@ -35,7 +35,7 @@ public class NewsService {
         BeanUtils.copyProperties(res, ret);
 
         NewsExtDO ext = newsExtDAO.findOne(id);
-        ret.setContent(ext.getContent());
+        ret.setContent(ext.getContent().replace("<!cmsurl />", "//localhost/"));
 
         // System.out.println("ret = " + ret);
 

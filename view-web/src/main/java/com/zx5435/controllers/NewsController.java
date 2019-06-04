@@ -22,8 +22,6 @@ public class NewsController {
 //        }
         NewsOneVO info = newsRpc.info(id);
 
-        info.setContent(info.getContent().replace("<!cmsurl />", "//localhost/"));
-
         m.addAttribute("info", info);
 
         return "news/info";
