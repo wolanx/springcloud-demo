@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="cn" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="~{layout/main}">
 <head>
-    <title>index</title>
+    <title>首页</title>
 </head>
 <body>
-<h1>web index</h1>
-<nav>
-    <a href="/user">user</a>
-</nav>
-<ul>
-    <li th:each="o : ${newsList}"><a th:href="|/news/${o.id}|" th:text="${o.title}"></a></li>
-</ul>
+<section class="mt-main mt-site-index" layout:fragment="content">
+    <h1>列表</h1>
+    <ul>
+        <li th:each="o : ${newsList}"><a th:href="|/news/${o.id}|" th:text="${o.title}"></a></li>
+    </ul>
+</section>
 </body>
 </html>

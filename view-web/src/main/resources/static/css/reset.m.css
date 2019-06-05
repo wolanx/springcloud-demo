@@ -86,3 +86,11 @@ img {
     margin: 0 auto;
     max-width: 640px;
 }
+
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #f60;
+}
