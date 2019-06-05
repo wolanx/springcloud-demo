@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="shortcut icon" href="/favicon.ico?v=123" type="image/x-icon">
+    <link rel="stylesheet" href="/css/reset.m.css">
+    <script>
+        (function setFS() {
+            var oHtml = document.documentElement;
+            var screenWidth = oHtml.clientWidth < 640 ? oHtml.clientWidth : 640;
+            oHtml.style.fontSize = screenWidth / (750 / 100) + 'px';
+        })();
+    </script>
+</head>
+<body class="w600">
+
+<blockquote layout:fragment="content"></blockquote>
+
+</body>
+</html>

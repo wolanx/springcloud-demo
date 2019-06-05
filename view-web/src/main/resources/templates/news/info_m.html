@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout/main}">
+      layout:decorate="~{layout/m}">
 <head>
     <title th:text="${info.title}"></title>
-    <link rel="stylesheet" href="/css/news_info.css">
+    <link rel="stylesheet" href="/css/news_info_m.css">
 </head>
 <body>
-<main layout:fragment="content" class="mt-main bit-news-info">
-    <h1 class="bit-title" th:utext="${info.title}">title</h1>
+<main layout:fragment="content" class="bit-wrap">
+    <div class="bit-title" th:utext="${info.title}">title</div>
     <div class="bit-source">
         <span th:text="${info.publish_at}">发布时间</span>
         <span th:text="${info.source_name != null ? info.source_name : '摩极网'}">来源</span>

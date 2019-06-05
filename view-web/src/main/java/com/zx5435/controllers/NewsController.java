@@ -1,5 +1,7 @@
 package com.zx5435.controllers;
 
+import cn.hutool.http.useragent.UserAgent;
+import cn.hutool.http.useragent.UserAgentUtil;
 import com.zx5435.mode.vo.NewsOneVO;
 import com.zx5435.rpc.NewsRpc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,23 +10,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class NewsController {
 
     @Autowired
     NewsRpc newsRpc;
 
-    @RequestMapping(value = "/news/{id}")
-    public String info(Model m,
-                       @PathVariable("id") int id) throws Exception {
-//        if (true) {
-//            throw new Exception("This is MyException1.");
-//        }
-        NewsOneVO info = newsRpc.info(id);
+    @Autowired
+    HttpServletRequest request;
 
+    @RequestMapping(value = "/news/{id}")
+    public String info(Model m, @PathVariable("id") int id) {
+        NewsOneVO info = newsRpc.info(id);
         m.addAttribute("info", info);
 
-        return "news/info";
+        String uaStr = request.getHeader("user-agent");
+        UserAgent ua = UserAgentUtil.parse(uaStr);
+
+        if (ua.isMobile()) {
+            return "news/info_m";
+        } else {
+            return "news/info";
+        }
     }
 
 }
