@@ -14,4 +14,9 @@ public class UserController {
         return "user/index";
     }
 
+    @RequestMapping("/user/login")
+    public String login(Model m) {
+        return "user/login";
+    }
+
 }

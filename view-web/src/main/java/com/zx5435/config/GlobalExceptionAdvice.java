@@ -12,13 +12,13 @@ public class GlobalExceptionAdvice {
 
     @ExceptionHandler(Exception.class)
     public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {
-        ModelAndView mav = new ModelAndView("site/error");
-        mav.addObject("message", e.getMessage());
-        System.out.println("GlobalExceptionAdvice: " + e.getMessage());
+        ModelAndView m = new ModelAndView("site/error");
+        m.addObject("exception", e.getMessage());
 
+        System.out.println("GlobalExceptionAdvice: " + e.getMessage());
         System.out.println("Util.ver = " + Util.ver);
 
-        return mav;
+        return m;
     }
 
 }
