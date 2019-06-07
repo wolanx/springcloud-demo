@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="cn" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
 <head>
-    <title>sdasd</title>
+    <title>user/index</title>
 </head>
 <body>
-<div>
+<main layout:fragment="content" class="mt-main">
     <h1>user index</h1>
     <h3 th:text="${username}"></h3>
-</div>
+</main>
 </body>
 </html>
