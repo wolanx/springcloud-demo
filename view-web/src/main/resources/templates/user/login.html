@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/main}">
 <head>
     <title>登录</title>
@@ -7,6 +7,17 @@
 <body>
 <main layout:fragment="content" class="mt-main">
     <h1>user login</h1>
+    <form id="login-form" action="/user/login" method="post">
+        <div class="form-group field-user-username">
+            <label class="control-label" for="user-username">Username</label>
+            <input type="text" id="user-username" class="form-control" name="User[username]" autofocus>
+        </div>
+        <div class="form-group field-user-password">
+            <label class="control-label" for="user-password">Password</label>
+            <input type="password" id="user-password" class="form-control" name="User[password]">
+        </div>
+        <button type="submit" class="btn btn-primary" name="login-button">Login</button>
+    </form>
 </main>
 </body>
 </html>
