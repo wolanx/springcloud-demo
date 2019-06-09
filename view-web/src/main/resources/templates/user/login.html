@@ -8,15 +8,15 @@
 <main layout:fragment="content" class="mt-main">
     <h1>user login</h1>
     <form id="login-form" action="/user/login" method="post">
-        <div class="form-group field-user-username">
-            <label class="control-label" for="user-username">Username</label>
-            <input type="text" id="user-username" class="form-control" name="User[username]" autofocus>
-        </div>
-        <div class="form-group field-user-password">
-            <label class="control-label" for="user-password">Password</label>
-            <input type="password" id="user-password" class="form-control" name="User[password]">
-        </div>
-        <button type="submit" class="btn btn-primary" name="login-button">Login</button>
+        <label>
+            <input type="text" name="User[username]" autofocus value="13816076964">
+        </label>
+        <br>
+        <label>
+            <input type="password" name="User[password]" value="1">
+        </label>
+        <br>
+        <button type="submit">Login</button>
     </form>
 </main>
 </body>
