@@ -25,7 +25,7 @@ public class SiteController {
 
     @RequestMapping("/site/error")
     public String siteError(Model m) {
-        m.addAttribute("message", "error test.");
+        m.addAttribute("exception", "error test.");
 
         return "site/error";
     }
