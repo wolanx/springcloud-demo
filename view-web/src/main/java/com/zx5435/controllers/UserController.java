@@ -29,6 +29,7 @@ public class UserController {
             String username = request.getParameter("username");
             System.out.println("username = " + username);
             if ("qwe".equals(username)) {
+                request.getSession().setAttribute("sid", username);
                 return "redirect:/user?" + username;
             }
         }
