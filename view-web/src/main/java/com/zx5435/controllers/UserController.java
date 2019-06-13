@@ -1,5 +1,6 @@
 package com.zx5435.controllers;
 
+import com.zx5435.pcmoto.model.base.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,9 @@ public class UserController {
     public String login(Model m) {
         String method = request.getMethod();
         System.out.println("method = " + method);
+
+        User user = new User();
+        System.out.println("user = " + user);
 
         if ("POST".equals(method)) {
             String username = request.getParameter("username");
