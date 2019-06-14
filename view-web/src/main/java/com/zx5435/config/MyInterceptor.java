@@ -10,11 +10,11 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String url = request.getRequestURI();
-        Object sid = request.getSession().getAttribute("sid");
+        Object uid = request.getSession().getAttribute("uid");
 
-        System.out.println("MyInterceptor = " + url + "; sid = " + sid);
+        System.out.println("MyInterceptor = " + url + "; uid = " + uid);
 
-        if (url.equals("/user") && sid == null) {
+        if (uid == null) {
             response.sendRedirect("/user/login?from=" + url);
             return false;
         }

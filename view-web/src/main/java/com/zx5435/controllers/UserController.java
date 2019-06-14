@@ -16,7 +16,7 @@ public class UserController {
 
     @RequestMapping("/user")
     public String index(Model m) {
-        m.addAttribute("username", "sdssss");
+        m.addAttribute("username", request.getSession().getAttribute("uid"));
 
         return "user/index";
     }
@@ -33,7 +33,7 @@ public class UserController {
             String username = request.getParameter("username");
             System.out.println("username = " + username);
 
-            request.getSession().setAttribute("sid", username);
+            request.getSession().setAttribute("uid", username);
             return "redirect:/user?" + username;
         }
 
@@ -42,7 +42,12 @@ public class UserController {
 
     @RequestMapping("/user/logout")
     public String logout(Model m) {
-        request.getSession().removeAttribute("sid");
+        String id = request.getSession().getId();
+        String s = request.changeSessionId();
+        System.out.println("id = " + id);
+        System.out.println("s = " + s);
+
+        request.getSession().removeAttribute("uid");
         return "redirect:/user/login";
     }
 

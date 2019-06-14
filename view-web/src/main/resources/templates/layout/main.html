@@ -18,8 +18,8 @@
             <a href="/user">下载</a>
         </nav>
         <div class="mt-head-user">
-            <a th:if="${session.sid} == null" href="/user/login">登录</a>
-            <a th:if="${session.sid} != null" href="/user/logout" th:text="${session.sid} + ' 退出'"></a>
+            <a th:if="${session.uid} == null" href="/user/login">登录</a>
+            <a th:if="${session.uid} != null" href="/user/logout" th:text="${session.uid} + ' 退出'"></a>
         </div>
     </div>
 </header>
