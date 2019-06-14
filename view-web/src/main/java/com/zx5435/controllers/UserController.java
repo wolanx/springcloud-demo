@@ -24,21 +24,26 @@ public class UserController {
     @RequestMapping("/user/login")
     public String login(Model m) {
         String method = request.getMethod();
-        System.out.println("method = " + method);
 
         User user = new User();
+        System.out.println("method = " + method);
         System.out.println("user = " + user);
 
         if ("POST".equals(method)) {
             String username = request.getParameter("username");
             System.out.println("username = " + username);
-            if ("qwe".equals(username)) {
-                request.getSession().setAttribute("sid", username);
-                return "redirect:/user?" + username;
-            }
+
+            request.getSession().setAttribute("sid", username);
+            return "redirect:/user?" + username;
         }
 
         return "user/login";
+    }
+
+    @RequestMapping("/user/logout")
+    public String logout(Model m) {
+        request.getSession().removeAttribute("sid");
+        return "redirect:/user/login";
     }
 
 }

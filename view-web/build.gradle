@@ -5,10 +5,18 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
 
+    // rpc
     compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 
+    // tpl
     compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
     compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.4.1'
+
+    // session redis
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.session:spring-session-data-redis'
+
+    // tool
     compile 'com.alibaba:fastjson:1.2.58'
 }

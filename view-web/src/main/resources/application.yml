@@ -5,6 +5,10 @@ spring:
     name: view-web
   thymeleaf:
     cache: false
+  session:
+    store-type: redis
+  redis:
+    host: ${sc_db_host}
 
 eureka:
   client:
