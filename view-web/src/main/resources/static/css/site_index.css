@@ -46,12 +46,12 @@
 }
 .mt-head-f .mt-head-user {
   float: right;
+  font-size: 14px;
+  line-height: 60px;
 }
 .mt-head-f .mt-head-user a {
   color: #333;
-  font-size: 14px;
   height: 60px;
-  line-height: 60px;
 }
 .mt-foot {
   background: #323232;
