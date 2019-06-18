@@ -3,7 +3,7 @@ package com.zx5435.pcmoto.web.controllers;
 import com.zx5435.pcmoto.web.config.LogUtil;
 import com.zx5435.pcmoto.web.config.LogConfig;
 import com.zx5435.pcmoto.common.base.User;
-import groovy.util.logging.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +34,7 @@ public class UserController {
         LogConfig.log.info("method = " + method);
         LogUtil.info("user = " + user);
 
-//        log.info("qwe");
+        log.info("qwe");
 
         if ("POST".equals(method)) {
             String username = request.getParameter("username");
