@@ -6,4 +6,3 @@ include 'service-news'
 include 'service-user'
 include 'view-web'
 include 'view-api'
-

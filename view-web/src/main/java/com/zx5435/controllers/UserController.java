@@ -1,6 +1,9 @@
 package com.zx5435.controllers;
 
+import com.zx5435.config.LogUtil;
+import com.zx5435.config.LogConfig;
 import com.zx5435.pcmoto.model.base.User;
+import groovy.util.logging.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @Controller
 public class UserController {
 
@@ -26,8 +30,11 @@ public class UserController {
         String method = request.getMethod();
 
         User user = new User();
-        System.out.println("method = " + method);
-        System.out.println("user = " + user);
+
+        LogConfig.log.info("method = " + method);
+        LogUtil.info("user = " + user);
+
+        log.info("qwe");
 
         if ("POST".equals(method)) {
             String username = request.getParameter("username");

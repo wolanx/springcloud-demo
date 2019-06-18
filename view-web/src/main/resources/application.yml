@@ -8,7 +8,7 @@ spring:
   session:
     store-type: redis
   redis:
-    host: ${sc_db_host}
+    host: zx5435.com
 
 eureka:
   client:
@@ -19,6 +19,9 @@ feign:
   hystrix:
     enabled: true
 
-#logging:
+logging:
+  file: /Users/zhaoyujie/Desktop/log/a.log
+#  pattern:
+#    console: '%d{MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M\(%line\) - %msg%n'
 #  level:
 #    root: debug
