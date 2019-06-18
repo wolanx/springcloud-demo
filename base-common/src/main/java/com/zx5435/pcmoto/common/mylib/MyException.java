@@ -1,4 +1,4 @@
-package com.zx5435.mylib;
+package com.zx5435.pcmoto.common.mylib;
 
 public class MyException extends Exception {
 

@@ -1,3 +1,10 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'com.zx5435.pcmoto.common.BaseCommonApp'
+
 dependencies {
     //
 }

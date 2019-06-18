@@ -1,6 +1,6 @@
 package com.zx5435.config;
 
-import com.zx5435.mylib.Util;
+import com.zx5435.pcmoto.common.mylib.Util;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;

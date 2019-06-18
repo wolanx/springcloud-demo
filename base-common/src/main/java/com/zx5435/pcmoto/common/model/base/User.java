@@ -1,4 +1,4 @@
-package com.zx5435.pcmoto.model.base;
+package com.zx5435.pcmoto.common.model.base;
 
 public class User {
 

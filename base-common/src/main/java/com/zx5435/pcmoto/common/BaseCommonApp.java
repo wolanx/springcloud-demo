@@ -1,4 +1,4 @@
-package com.zx5435;
+package com.zx5435.pcmoto.common;
 
 public class BaseCommonApp {
 

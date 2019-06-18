@@ -1,9 +1,18 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
 dependencies {
     compile project(':base-common')
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
     compile 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
+    //compile 'org.springframework.boot:spring-boot-starter-logging'
 
     // rpc
     compile 'org.springframework.cloud:spring-cloud-starter-openfeign'
@@ -20,3 +29,11 @@ dependencies {
     // tool
     compile 'com.alibaba:fastjson:1.2.58'
 }
+
+//sourceSets {
+//    main {
+//        java {
+//            srcDirs = ['src/main/java', '../base-common/src/main/java']
+//        }
+//    }
+//}
