@@ -15,6 +15,7 @@ plugins {
 }
 
 allprojects {
+    apply plugin: 'idea'
     apply plugin: 'java'
     apply plugin: 'docker'
     apply plugin: 'io.spring.dependency-management'
@@ -73,6 +74,6 @@ subprojects {
     }
 }
 
-project(':base-common') {
+project(':common') {
     //
 }
