@@ -17,7 +17,6 @@ public class LogConfig {
     @Bean
     public void logMethod() {
         log.info("==========print log==========");
-        log.info("(LogConfig.java:15)");
 
 //        Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
 //        LoggerContext ctx = root.getLoggerContext();
