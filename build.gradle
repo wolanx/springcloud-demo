@@ -74,6 +74,6 @@ subprojects {
     }
 }
 
-project(':common') {
+project(':base-common') {
     //
 }

@@ -1,6 +1,6 @@
 rootProject.name = 'com.zx5435.pcmoto'
 
-include 'common'
+include 'base-common'
 include 'base-eureka'
 include 'service-news'
 include 'service-user'
