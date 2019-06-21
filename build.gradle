@@ -50,6 +50,14 @@ subprojects {
         testCompile 'junit:junit:4.12'
     }
 
+    jar {
+        enabled = true
+    }
+
+    bootJar {
+        enabled = true
+    }
+
     // @see https://github.com/Transmode/gradle-docker
     task buildDocker(type: Docker, dependsOn: bootJar) {
         doFirst {
