@@ -1,4 +1,4 @@
-package com.zx5435.pcmoto.news.controllers;
+package com.zx5435.pcmoto.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

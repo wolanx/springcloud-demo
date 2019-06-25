@@ -1,4 +1,4 @@
-package com.zx5435.pcmoto.news.controllers;
+package com.zx5435.pcmoto.web.controllers;
 
 import com.zx5435.pcmoto.web.mode.entity.NewsDO;
 import com.zx5435.pcmoto.web.rpc.NewsRpc;
