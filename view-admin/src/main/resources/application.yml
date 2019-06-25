@@ -1,5 +1,5 @@
 server:
-  port: 2003
+  port: 2001
 spring:
   application:
     name: view-web
