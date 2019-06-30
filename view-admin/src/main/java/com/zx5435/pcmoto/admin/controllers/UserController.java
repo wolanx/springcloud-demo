@@ -23,13 +23,16 @@ public class UserController {
     public String index(Model m) {
         log.info("user");
 
-        Page<UserDO> all = userDao.findAll(PageRequest.of(0, 20));
-        List<UserDO> content = all.getContent();
+        Page<UserDO> res = userDao.findAll(PageRequest.of(0, 20));
+        List<UserDO> content = res.getContent();
 
-        System.out.println("all = " + all);
+        System.out.println("res = " + res);
         System.out.println("content = " + content);
 
-        m.addAttribute("all", content);
+        m.addAttribute("res", content);
+        m.addAttribute("page", res.getPageable());
+
+        System.out.println("res = " + res.getPageable());
 
         return "user/index";
     }

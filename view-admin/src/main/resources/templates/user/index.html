@@ -6,10 +6,9 @@
 </head>
 <body>
 <main layout:fragment="content">
-    233
     <h2></h2>
     <ul>
-        <li th:each="o : ${all}" th:text="${o.username}"></li>
+        <li th:each="o : ${res}" th:text="${o.username}"></li>
     </ul>
 </main>
 </body>
