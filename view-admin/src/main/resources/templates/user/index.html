@@ -2,14 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/main}">
 <head>
-    <title>首页</title>
+    <title>user/index</title>
 </head>
 <body>
-<main layout:fragment="content">
-    <h2></h2>
-    <ul>
-        <li th:each="o : ${res}" th:text="${o.username}"></li>
-    </ul>
+<main layout:fragment="content" class="mt-main">
+    <h1>user index</h1>
+    <h3 th:text="'name: '+${username}"></h3>
 </main>
 </body>
 </html>

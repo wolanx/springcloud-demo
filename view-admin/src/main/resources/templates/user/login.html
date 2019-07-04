@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>登录</title>
+</head>
+<body>
+<main layout:fragment="content" class="mt-main">
+    <h1>user login</h1>
+    <form id="login-form" action="/user/login" method="post">
+        <label>
+            <input type="text" name="username" autofocus value="13816076964">
+        </label>
+        <br>
+        <label>
+            <input type="password" name="password" value="">
+        </label>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+</main>
+</body>
+</html>

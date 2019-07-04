@@ -1,40 +1,56 @@
 package com.zx5435.pcmoto.admin.controllers;
 
-import com.zx5435.pcmoto.admin.dao.UserDao;
-import com.zx5435.pcmoto.admin.entity.UserDO;
+import com.zx5435.pcmoto.common.base.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
-@Controller
 @Slf4j
+@Controller
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    HttpServletRequest request;
 
     @RequestMapping("/user")
     public String index(Model m) {
-        log.info("user");
-
-        Page<UserDO> res = userDao.findAll(PageRequest.of(0, 20));
-        List<UserDO> content = res.getContent();
-
-        System.out.println("res = " + res);
-        System.out.println("content = " + content);
-
-        m.addAttribute("res", content);
-        m.addAttribute("page", res.getPageable());
-
-        System.out.println("res = " + res.getPageable());
+        m.addAttribute("username", request.getSession().getAttribute("uid"));
 
         return "user/index";
+    }
+
+    @RequestMapping("/user/login")
+    public String login(Model m) {
+        String method = request.getMethod();
+
+        User user = new User();
+
+        log.info("name = {},user = [{}]", "qwe", user);
+
+        if ("POST".equals(method)) {
+            String username = request.getParameter("username");
+            System.out.println("username = " + username);
+
+            request.getSession().setAttribute("uid", username);
+            return "redirect:/user?" + username;
+        }
+
+        return "user/login";
+    }
+
+    @RequestMapping("/user/logout")
+    public String logout(Model m) {
+        String id = request.getSession().getId();
+        String s = request.changeSessionId();
+        System.out.println("id = " + id);
+        System.out.println("s = " + s);
+
+        request.getSession().removeAttribute("uid");
+        return "redirect:/user/login";
     }
 
 }
