@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
     <head>
         <title>title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,13 +15,15 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link" href="/news">news</a>
                         </li>
                         <li>
                             <a class="nav-link" href="#">Pricing</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="/user">登录</a>
+                            <a th:if="${session.uid} == null" class="nav-link" href="/user">登录</a>
+                            <a th:if="${session.uid} != null" class="nav-link" href="/user/logout"
+                               th:text="'注销('+${session.uid}+')'"></a>
                         </li>
                     </ul>
                 </div>
