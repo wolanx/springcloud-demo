@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>title</title>
+        <link rel="stylesheet" href="/css/reset.m.css">
+        <link rel="stylesheet" href="/css/site_index.css">
+    </head>
+    <body>
+
+        <header class="mt-head-f">
+            <div class="mt-head">
+                <a class="mt-head-logo" href="/"><img alt="logo" src="/img/logo@2x.jpg"></a>
+                <nav>
+                    <a href="/" class="on">首页</a>
+                    <a href="#">摩托车大全</a>
+                    <a href="#">百科</a>
+                    <a href="#">论坛</a>
+                    <a href="/user">下载</a>
+                </nav>
+                <div class="mt-head-user">
+                    <a th:if="${session.uid} == null" href="/user/login">登录</a>
+                    <div th:if="${session.uid} != null">
+                        <a href="/user" th:text="${session.uid}"></a>
+                        <a href="/user/logout">退出</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <header class="mt-head-h clearfix"></header>
+
+        <blockquote layout:fragment="content"></blockquote>
+
+        <footer class="mt-foot">©2019 zx5435.com All Rights Reserved.</footer>
+
+    </body>
+</html>
