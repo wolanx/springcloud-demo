@@ -16,5 +16,5 @@ public interface NewsDao extends JpaRepository<NewsDO, Integer> {
     List<NewsDO> findAllByCidOrderByViewsDesc(Integer cid);
 
     List<NewsDO> findAllByTitleAndStatus(String title, Integer status);
-    
+
 }

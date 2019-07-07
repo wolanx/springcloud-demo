@@ -1,11 +1,14 @@
 package com.zx5435.pcmoto.admin.entity;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "mt_user")
+@Data
 public class UserDO {
 
     @Id

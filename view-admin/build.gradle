@@ -17,6 +17,7 @@ dependencies {
     compile "mysql:mysql-connector-java:${mySqlVer}"
     compile "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVer}"
     compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'com.baomidou:mybatis-plus-boot-starter:3.1.2'
 
     // rpc
 //    compile 'org.springframework.cloud:spring-cloud-starter-openfeign'

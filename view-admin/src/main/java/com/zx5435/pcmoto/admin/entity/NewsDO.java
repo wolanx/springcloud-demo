@@ -1,5 +1,6 @@
 package com.zx5435.pcmoto.admin.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import java.sql.Timestamp;
 @Data
 @Entity
 @Table(name = "mt_news")
+@TableName(value = "mt_news")
 public class NewsDO {
 
     @Id
