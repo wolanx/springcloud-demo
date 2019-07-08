@@ -2,10 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/main}">
 <head>
-    <title th:text="${error}"></title>
+    <title th:text="${error} + ' (#' + ${status} + ')'"></title>
 </head>
 <main layout:fragment="content" class="container">
-    <h1 th:text="${error}+ ' (#' + ${status} +')'">Not Found (#404)</h1>
+    <h1 th:text="${error} + ' (#' + ${status} + ')'">Not Found (#404)</h1>
     <!--<h2 th:text="${#dates.format(timestamp,'yyyy-MM-dd HH:mm:ss')}"></h2>-->
     <div class="alert alert-danger" th:text="${message}"></div>
 </main>

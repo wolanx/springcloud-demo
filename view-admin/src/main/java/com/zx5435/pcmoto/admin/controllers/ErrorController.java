@@ -2,20 +2,15 @@ package com.zx5435.pcmoto.admin.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.NoHandlerFoundException;
 
-import javax.servlet.http.HttpServletRequest;
-
-/**
- * error 源码 BasicErrorController
- */
 @Controller
 public class ErrorController {
 
+    /**
+     * 假 error
+     * 实际源码 BasicErrorController
+     */
     @RequestMapping("/error-fake")
     public String error(Model m) {
         m.addAttribute("timestamp"); // "timestamp" -> "Mon Jul 08 19:41:03 CST 2019"
@@ -27,13 +22,12 @@ public class ErrorController {
         return "error";
     }
 
-//    @ExceptionHandler(value = NoHandlerFoundException.class)
-//    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) throws Exception {
-//        ModelAndView mav = new ModelAndView();
-//        mav.addObject("exception", e);
-//        mav.addObject("url", req.getRequestURL());
-//        mav.setViewName("error/error");
-//        return mav;
-//    }
+    @RequestMapping("/error/test")
+    public String test() throws Exception {
+        if (true) {
+            throw new Exception("呵呵阿达");
+        }
+        return "error/test";
+    }
 
 }
