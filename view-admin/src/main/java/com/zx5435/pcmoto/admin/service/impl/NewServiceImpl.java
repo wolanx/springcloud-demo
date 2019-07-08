@@ -1,6 +1,9 @@
 package com.zx5435.pcmoto.admin.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zx5435.pcmoto.admin.dao.NewsDao;
+import com.zx5435.pcmoto.admin.entity.UserDO;
 import com.zx5435.pcmoto.admin.mapper.NewsMapper;
 import com.zx5435.pcmoto.admin.entity.NewsDO;
 import com.zx5435.pcmoto.admin.service.NewService;
@@ -28,9 +31,13 @@ public class NewServiceImpl implements NewService {
         log.info("get::arr");
 //        System.out.println(arr);
 
-        List<NewsDO> a = newsMapper.selectList(null);
+        LambdaQueryWrapper<NewsDO> ge = new QueryWrapper<NewsDO>()
+                .lambda()
+                .lt(NewsDO::getCid, 137);
+
+        List<NewsDO> a = newsMapper.selectList(ge);
         System.out.println("a = " + a);
 
-        return arr;
+        return a;
     }
 }

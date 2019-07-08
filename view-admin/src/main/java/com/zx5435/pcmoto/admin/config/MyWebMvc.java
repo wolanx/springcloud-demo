@@ -5,6 +5,10 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @Configuration
 public class MyWebMvc implements WebMvcConfigurer {
 
@@ -12,8 +16,8 @@ public class MyWebMvc implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration loginIt = registry.addInterceptor(new MyInterceptor());
 
-        loginIt.addPathPatterns("/user/**");
-        loginIt.excludePathPatterns("/user/login");
+        loginIt.addPathPatterns("/**");
+        loginIt.excludePathPatterns(Arrays.asList("/", "/user/login"));
     }
 
 }
