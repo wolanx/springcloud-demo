@@ -1,32 +1,21 @@
 import org.springframework.stereotype.Component;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class Play {
 
     public static void main(String[] args) {
 
-        Play p = new Play();
-        Class<? extends Play> aClass = p.getClass();
-        Annotation[] a = aClass.getAnnotations();
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(123);
+        arr.add(222);
+        arr.add(333);
 
-        try {
-            Method heh = aClass.getMethod("heh");
+        System.out.println("arr = " + arr);
 
-            Object qwe = heh.invoke("qwe");
-
-            System.out.println("qwe = " + qwe);
-
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        for (Annotation annotation : a) {
-            System.out.println("annotation = " + annotation);
-        }
+        arr.forEach(System.out::println);
 
     }
 

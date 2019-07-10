@@ -2,10 +2,11 @@ package com.zx5435.pcmoto.admin.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zx5435.pcmoto.admin.dao.NewsDao;
-import com.zx5435.pcmoto.admin.entity.UserDO;
-import com.zx5435.pcmoto.admin.mapper.NewsMapper;
 import com.zx5435.pcmoto.admin.entity.NewsDO;
+import com.zx5435.pcmoto.admin.mapper.NewsMapper;
 import com.zx5435.pcmoto.admin.service.NewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class NewServiceImpl implements NewService {
     NewsMapper newsMapper;
 
     @Override
-    public List getList() {
+    public List<NewsDO> getList() {
 //        List<NewsDO> arr = newsDao.findAll();
         List<NewsDO> arr = newsDao.findAllByCidOrderByViewsDesc(598);
 
@@ -35,8 +36,13 @@ public class NewServiceImpl implements NewService {
                 .lambda()
                 .lt(NewsDO::getCid, 137);
 
-        List<NewsDO> a = newsMapper.selectList(ge);
-        System.out.println("a = " + a);
+        log.info(ge.getSqlSelect());
+
+        IPage<NewsDO> p = newsMapper.selectPage(new Page<>(0, 5), ge);
+        List<NewsDO> a = p.getRecords();
+        System.out.println("p.getPages() = " + p.getPages());
+        System.out.println("p.getSize() = " + p.getSize());
+        System.out.println("p.getTotal() = " + p.getTotal());
 
         return a;
     }
