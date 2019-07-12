@@ -38,3 +38,6 @@ management:
 logging:
   path: log
 #  pattern: # org.springframework.boot.logging.logback.DefaultLogbackConfiguration.CONSOLE_LOG_PATTERN
+
+info:
+  author: zyj5435
