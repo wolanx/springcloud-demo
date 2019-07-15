@@ -10,9 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Controller
 @Slf4j
@@ -31,6 +30,12 @@ public class NewsController {
         log.info(name);
 
         System.out.println("aasdasd = " + aasdasd.author);
+
+        ConcurrentHashMap<String, Object> o = new ConcurrentHashMap<String, Object>();
+
+        ReentrantLock r = new ReentrantLock();
+        r.lock();
+        r.unlock();
 
         return "news/index";
     }
