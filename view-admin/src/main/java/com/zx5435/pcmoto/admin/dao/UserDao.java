@@ -21,4 +21,6 @@ public interface UserDao extends JpaRepository<UserDO, Integer> {
     @Override
     Optional<UserDO> findById(Integer integer);
 
+    UserDO findOneByUsername(String username);
+
 }

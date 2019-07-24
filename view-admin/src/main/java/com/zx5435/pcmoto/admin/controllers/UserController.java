@@ -1,6 +1,10 @@
 package com.zx5435.pcmoto.admin.controllers;
 
+import com.zx5435.pcmoto.admin.dao.UserDao;
+import com.zx5435.pcmoto.admin.entity.UserDO;
+import com.zx5435.pcmoto.admin.util.Util;
 import com.zx5435.pcmoto.common.base.User;
+import com.zx5435.pcmoto.common.mylib.MyException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +20,9 @@ public class UserController {
     @Autowired
     HttpServletRequest request;
 
+    @Autowired
+    UserDao userDao;
+
     @RequestMapping("/user")
     public String index(Model m) {
         m.addAttribute("username", request.getSession().getAttribute("uid"));
@@ -29,14 +36,27 @@ public class UserController {
 
         User user = new User();
 
-        log.info("name = {},user = [{}]", "qwe", user);
-
+        // from
         if ("POST".equals(method)) {
             String username = request.getParameter("username");
-            System.out.println("username = " + username);
+            String password = request.getParameter("password");
+            log.info("username = {}, password = [{}]", username, password);
+
+            UserDO dbUser = userDao.findOneByUsername(username);
+            if (dbUser == null) {
+                m.addAttribute("error", "帐号不存在");
+                return "user/login";
+            }
+            String pwd1 = dbUser.getPassword();
+            String pwd2 = Util.calcPwd(password, dbUser.getSalt());
+            if (!pwd1.equals(pwd2)) {
+                m.addAttribute("error", "密码错误");
+                return "user/login";
+            }
 
             request.getSession().setAttribute("uid", username);
-            return "redirect:/user?" + username;
+
+            return "redirect:/user?logged=" + username;
         }
 
         return "user/login";

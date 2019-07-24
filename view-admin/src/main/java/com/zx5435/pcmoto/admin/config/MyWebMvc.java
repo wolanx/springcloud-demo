@@ -17,6 +17,7 @@ public class MyWebMvc implements WebMvcConfigurer {
         loginIt.addPathPatterns("/**");
         loginIt.excludePathPatterns(Arrays.asList(
                 "/user/login",
+                "/error/**",
                 "/css/**",
                 "/js/**",
                 "/img/**",

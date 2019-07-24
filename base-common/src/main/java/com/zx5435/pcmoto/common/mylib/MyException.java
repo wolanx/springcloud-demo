@@ -1,11 +1,10 @@
 package com.zx5435.pcmoto.common.mylib;
 
-public class MyException extends Exception {
+public class MyException extends RuntimeException {
 
     private Integer code;
     private String message;
 
-    @Override
     public String toString() {
         return "MyException{" +
                 "code=" + code +
@@ -28,4 +27,5 @@ public class MyException extends Exception {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }

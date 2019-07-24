@@ -1,24 +1,22 @@
 package com.zx5435.pcmoto.demo;
 
-import com.alibaba.fastjson.JSON;
-
-import java.util.HashMap;
+import cn.hutool.crypto.digest.DigestUtil;
 
 public class Demo1 {
 
     public static void main(String[] args) {
 
-        Object p = JSON.parse("{a:1}");
+        String a = DigestUtil.md5Hex("12341234qwerqwer");
 
-        System.out.println("p = " + p);
+        String b = DigestUtil.md5Hex(a);
+        System.out.println("b = " + b);
 
-        HashMap<String, Object> h = new HashMap<>();
-        h.put("a", 123);
-        h.put("name", "qwe");
-
-        String s = JSON.toJSONString(h);
-        System.out.println("s = " + s);
+        System.out.println("Integer.MAX_VALUE = " + Integer.MAX_VALUE);
 
     }
+
+}
+
+enum Status {
 
 }
