@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/main}">
+<head>
+    <title>bsp - index</title>
+</head>
+<body>
+<main layout:fragment="content" class="container">
+    <table class="table table-bordered">
+        <tr th:each="one: ${arr}">
+            <td th:text="${one.id}"></td>
+            <td th:text="${one.pinyin}"></td>
+            <td th:text="${one.cname}"></td>
+            <td th:text="${one.sname}"></td>
+            <td th:text="${one.tsCreate}"></td>
+            <td th:text="${one.tsUpdate}"></td>
+        </tr>
+    </table>
+</main>
+</body>
+</html>
