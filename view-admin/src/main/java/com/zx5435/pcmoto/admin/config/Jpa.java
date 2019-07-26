@@ -1,6 +1,7 @@
 package com.zx5435.pcmoto.admin.config;
 
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
