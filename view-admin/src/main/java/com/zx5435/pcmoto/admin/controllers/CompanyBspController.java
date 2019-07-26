@@ -2,6 +2,8 @@ package com.zx5435.pcmoto.admin.controllers;
 
 import com.zx5435.pcmoto.admin.dao.CompanyBspDao;
 import com.zx5435.pcmoto.admin.entity.CompanyBspDO;
+import com.zx5435.pcmoto.admin.model.scope.BspModel;
+import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
@@ -11,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Controller
@@ -20,8 +24,11 @@ public class CompanyBspController {
     @Autowired
     CompanyBspDao companyBspDao;
 
-    @Autowired
+    @PersistenceContext
     EntityManager entityManager;
+
+    @Autowired
+    BspModel bspModel;
 
     @RequestMapping("index")
     public String index(Model m) {
@@ -42,20 +49,14 @@ public class CompanyBspController {
                                 .withMatcher("pinyin", ExampleMatcher.GenericPropertyMatcher::contains);
                     }
                 },
-        new Sort(Sort.Direction.DESC, "id"));
+                new Sort(Sort.Direction.DESC, "id"));
 
         for (CompanyBspDO one : arr) {
-//            System.out.println("one = " + one.getTsCreate());
+            System.out.println("one = " + one.getTsCreate());
         }
-        m.addAttribute("arr", arr);
 
-        System.out.println("entityManager = " + entityManager);
-
-//        Query query = entityManager.createNativeQuery("select * from user");
-//        List list = query.getResultList();
-//        System.out.println("singleResult = " + list);
-
-//        BspModel.rrrrr();
+        List<CompanyBspDO> all = bspModel.all();
+        m.addAttribute("arr", all);
 
         return "company-bps/index";
     }

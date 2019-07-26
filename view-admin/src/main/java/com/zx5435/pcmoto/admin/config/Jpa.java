@@ -1,14 +1,11 @@
 package com.zx5435.pcmoto.admin.config;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
@@ -23,7 +20,7 @@ public class Jpa {
 
         emfb.setJpaVendorAdapter(jpaVendorAdapter);
 
-        emfb.setPackagesToScan("com.zx5435.pcmoto.admin.entity");
+        emfb.setPackagesToScan("com.zx5435.pcmoto.admin.entity", "com.zx5435.pcmoto.admin.model.scope");
         return emfb;
     }
 
