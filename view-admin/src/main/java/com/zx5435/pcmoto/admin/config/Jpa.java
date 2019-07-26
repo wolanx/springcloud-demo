@@ -1,15 +1,17 @@
 package com.zx5435.pcmoto.admin.config;
 
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.hibernate.SessionFactory;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.web.servlet.DispatcherServlet;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableAutoConfiguration
 public class Jpa {
 
     @Bean

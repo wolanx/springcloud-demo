@@ -1,15 +1,12 @@
 package com.zx5435.pcmoto.admin.model.scope;
 
 
-import cn.hutool.db.sql.Order;
 import com.zx5435.pcmoto.admin.entity.CompanyBspDO;
-import org.hibernate.Session;
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.query.criteria.internal.CriteriaBuilderImpl;
-import org.hibernate.sql.Select;
+import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.query.JpaQueryCreator;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +14,13 @@ import java.util.List;
 public class BspModel<T> {
 
     @Autowired
-    Session session;
+    private EntityManagerFactory entityManagerFactory;
 
     public static void main(String[] args) {
+        rrrrr();
+    }
+
+    public static void rrrrr() {
         BspModel<CompanyBspDO> a = new BspModel<>();
 
         BspModel<CompanyBspDO> b = a.find();
@@ -36,6 +37,22 @@ public class BspModel<T> {
     public List<T> all() {
 //        DetachedCriteria.forClass();
 //        JpaQueryCreator jpaQueryCreator = new JpaQueryCreator();
+
+        SQL sql = new SQL()
+                .SELECT("*")
+                .FROM("user");
+
+        System.out.println("sql = " + sql);
+
+        System.out.println(entityManagerFactory);
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        CriteriaBuilder b = entityManagerFactory.getCriteriaBuilder();
+//        b.createQuery().
+
+
+        List list = entityManager.createQuery(sql.toString()).getResultList();
+        System.out.println("list = " + list);
 
         return new ArrayList<>();
     }

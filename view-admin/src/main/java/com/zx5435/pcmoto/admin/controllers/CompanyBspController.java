@@ -2,6 +2,7 @@ package com.zx5435.pcmoto.admin.controllers;
 
 import com.zx5435.pcmoto.admin.dao.CompanyBspDao;
 import com.zx5435.pcmoto.admin.entity.CompanyBspDO;
+import com.zx5435.pcmoto.admin.model.scope.BspModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +22,12 @@ public class CompanyBspController {
         List<CompanyBspDO> arr = companyBspDao.findAll();
 
         for (CompanyBspDO one : arr) {
-            System.out.println("one = " + one.getTsCreate());
+//            System.out.println("one = " + one.getTsCreate());
         }
         m.addAttribute("arr", arr);
+
+        BspModel.rrrrr();
+
         return "company-bps/index";
     }
 
