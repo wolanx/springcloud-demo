@@ -1,7 +1,6 @@
-package com.zx5435.pcmoto.admin.dao;
+package com.zx5435.pcmoto.admin.model.jpa;
 
-import com.zx5435.pcmoto.admin.entity.NewsDO;
-import org.springframework.data.domain.Sort;
+import com.zx5435.pcmoto.admin.model.base.NewsDO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

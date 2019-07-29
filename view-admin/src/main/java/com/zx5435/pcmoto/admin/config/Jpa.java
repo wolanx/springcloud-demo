@@ -20,7 +20,7 @@ public class Jpa {
 
         emfb.setJpaVendorAdapter(jpaVendorAdapter);
 
-        emfb.setPackagesToScan("com.zx5435.pcmoto.admin.entity", "com.zx5435.pcmoto.admin.model.scope");
+        emfb.setPackagesToScan("com.zx5435.pcmoto.admin.model.base", "com.zx5435.pcmoto.admin.model.scope");
         return emfb;
     }
 

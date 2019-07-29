@@ -1,10 +1,9 @@
 package com.zx5435.pcmoto.admin.controllers;
 
-import com.zx5435.pcmoto.admin.dao.UserDao;
-import com.zx5435.pcmoto.admin.entity.UserDO;
+import com.zx5435.pcmoto.admin.model.jpa.UserDao;
+import com.zx5435.pcmoto.admin.model.base.UserDO;
 import com.zx5435.pcmoto.admin.util.Util;
 import com.zx5435.pcmoto.common.base.User;
-import com.zx5435.pcmoto.common.mylib.MyException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

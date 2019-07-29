@@ -1,6 +1,6 @@
 package com.zx5435.pcmoto.admin.controllers;
 
-import com.zx5435.pcmoto.admin.entity.NewsDO;
+import com.zx5435.pcmoto.admin.model.base.NewsDO;
 import com.zx5435.pcmoto.admin.service.NewService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

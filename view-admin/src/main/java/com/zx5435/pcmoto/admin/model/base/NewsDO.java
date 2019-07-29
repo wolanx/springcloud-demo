@@ -1,4 +1,4 @@
-package com.zx5435.pcmoto.admin.entity;
+package com.zx5435.pcmoto.admin.model.base;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

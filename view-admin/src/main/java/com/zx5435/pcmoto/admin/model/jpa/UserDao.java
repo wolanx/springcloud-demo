@@ -1,6 +1,6 @@
-package com.zx5435.pcmoto.admin.dao;
+package com.zx5435.pcmoto.admin.model.jpa;
 
-import com.zx5435.pcmoto.admin.entity.UserDO;
+import com.zx5435.pcmoto.admin.model.base.UserDO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

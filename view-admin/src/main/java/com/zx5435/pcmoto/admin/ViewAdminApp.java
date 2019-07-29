@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
 //@EnableDiscoveryClient
-@MapperScan("com.zx5435.pcmoto.admin.mapper")
+@MapperScan("com.zx5435.pcmoto.admin.model.plus")
 public class ViewAdminApp {
 
     public static void main(String[] args) {

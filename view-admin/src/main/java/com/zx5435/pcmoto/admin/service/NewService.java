@@ -1,7 +1,6 @@
 package com.zx5435.pcmoto.admin.service;
 
-import com.zx5435.pcmoto.admin.entity.NewsDO;
-import org.springframework.ui.Model;
+import com.zx5435.pcmoto.admin.model.base.NewsDO;
 
 import java.util.List;
 
