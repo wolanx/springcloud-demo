@@ -47,8 +47,12 @@ public class CompanyBspController {
                 new Sort(Sort.Direction.DESC, "id"));
 
         // 方式二 native sql
-        List<CompanyBspDO> arr2 = bspModel.all();
-        m.addAttribute("arr", arr2);
+        List<CompanyBspDO> arr2 = bspModel.getArrRawSql();
+
+        // 方式三
+        List<CompanyBspDO> arr3 = bspModel.getCb();
+
+        m.addAttribute("arr", arr3);
 
         return "company-bps/index";
     }
