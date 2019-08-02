@@ -1,5 +1,8 @@
 server:
   port: 2001
+  servlet:
+    session:
+      timeout: 24h
 spring:
   application:
     name: view-web

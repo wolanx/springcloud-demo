@@ -1,6 +1,7 @@
 package com.zx5435.pcmoto.admin;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 //import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
